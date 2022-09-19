@@ -30,7 +30,6 @@ export class MongoDBCarritos extends MongoClass {
 
   async addProductos(carrito, productos) {
     productos.forEach((producto) => {
-      // chequear si el producto ya esta en el carrito
       const productoEnCarrito = carrito.productos.find(
         (p) => p._id == producto._id
       );

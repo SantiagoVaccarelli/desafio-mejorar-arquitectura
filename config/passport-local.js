@@ -47,11 +47,8 @@ passport.use(
   )
 );
 
-/** hay dos funciones que passport necesita para trabajar con los ids de los usuarios en toda la app:
- * serializeUser: para guardar el id del usuario en la sesion
- * deserializeUser: para obtener el usuario de la base de datos por el id */
 passport.serializeUser((usuario, done) => {
-  done(null, usuario.id); // _id de mongo
+  done(null, usuario.id);
 });
 
 passport.deserializeUser(async (id, done) => {
