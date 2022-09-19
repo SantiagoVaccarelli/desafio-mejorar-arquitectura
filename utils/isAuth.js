@@ -6,5 +6,3 @@ export default isAuth = (req, res, next) => {
   }
   res.status(401).json({ message: "No autorizado" });
 };
-
-//

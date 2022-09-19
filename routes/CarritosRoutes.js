@@ -43,19 +43,17 @@ carritosRouter.get('/:id/productos', async (req, res) => {
 carritosRouter.post('/:id/productos', async (req, res) => {
     try {
         const carrito = await api.getOne(req.params.id);
-        const productos = req.body; 
-        if (carrito && productos) {
-            const carritoUpdated = await api.addProductos(carrito, productos);
-            const newCarrito = await api.getOne(carritoUpdated._id);
+        const producto = req.body; 
+  
+        if (carrito) {
+            await api.addProductos(carrito, producto);
+            const newCarrito = await api.getOne(carrito._id);
             res.status(201).json({
                 message: 'Productos agregados con éxito',
                 carrito: newCarrito});
         }
         if(!carrito) {
             res.status(404).json({message: 'Carrito no encontrado. id: ' + req.params.id});
-        }
-        if(!productos) {
-            res.status(404).json({message: 'La lista de productos está vacía'});
         }
     } catch (err) {
         res.status(500).json({message: err.message, line: err.line});

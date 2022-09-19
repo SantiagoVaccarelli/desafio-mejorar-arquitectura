@@ -28,20 +28,11 @@ export class MongoDBCarritos extends MongoClass {
     }
   }
 
-  async addProductos(carrito, productos) {
-    productos.forEach((producto) => {
-      const productoEnCarrito = carrito.productos.find(
-        (p) => p._id == producto._id
-      );
-      if (productoEnCarrito) {
-        productoEnCarrito.cantidad++;
-      } else {
-        carrito.productos.push(producto);
-      }
-    });
+  async addProductos(carrito, producto) {
+    console.log(producto)
     const carritoUpdated = await this.collection.findByIdAndUpdate(
       carrito._id,
-      { productos: carrito.productos }
+      { productos: producto}
     );
     return carritoUpdated;
   }
