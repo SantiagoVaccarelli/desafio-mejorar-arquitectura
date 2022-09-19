@@ -1,0 +1,12 @@
+PUT http://localhost:3000/api/productos/632754c6a1035b395a2b26ff HTTP/1.1
+content-type: application/json
+
+{
+    "precio": 0,
+    "nombre": "aHOLA",
+    "codigo": "12312412",
+    "precio": 156464,
+    "stock": 1,
+    "thumbnail":"asd",
+    "__v": 0
+}

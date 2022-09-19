@@ -1,0 +1,12 @@
+POST http://localhost:3000/api/productos HTTP/1.1
+content-type: application/json
+
+{
+    "precio": 0,
+    "nombre": "asdfqaw e4x",
+    "codigo": "1",
+    "precio": 1,
+    "stock": 1,
+    "thumbnail":"asd",
+    "__v": 0
+}

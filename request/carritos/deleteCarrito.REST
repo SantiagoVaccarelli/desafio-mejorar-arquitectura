@@ -1,0 +1,1 @@
+DELETE http://localhost:3000/api/carritos/62c02df4f09b62d9ab0f9da6
